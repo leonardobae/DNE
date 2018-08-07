@@ -1,0 +1,41 @@
+<div class="example-container">
+  
+    <div>
+      <span>
+        회원가입
+      </span>
+    </div>
+    
+    <mat-form-field>
+      <input [(ngModel)]="student_id" matInput placeholder="학번" type="number" required maxlength="8">
+    </mat-form-field>
+    <p>{{ valid_id() }}</p>
+    <p>{{ std_id_text }}</p>
+
+    <mat-form-field>
+      <input [(ngModel)]="pass_1" matInput placeholder="비밀번호" [type]="hide ? 'password' : 'text'" [(ngModel)]="pwd">
+      <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input [(ngModel)]="pass_2" matInput placeholder="비밀번호 확인" [type]="hide ? 'password' : 'text'">
+      <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+    </mat-form-field>
+    <p>{{ passComp() }}</p>
+    <p>{{ pass_text }}</p>
+
+    <mat-form-field>
+      <input matInput placeholder="이름" [(ngModel)]="name">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="전화번호" [(ngModel)]="phone">
+    </mat-form-field>
+    <p>{{ valid_phone() }}</p>
+    <p>{{ phone_text }}</p>
+  
+    <button class="button-center" mat-raised-button style="font-size: 16px; font-weight: bold" (click)="register()">가입하기</button>
+
+  
+</div>
+  

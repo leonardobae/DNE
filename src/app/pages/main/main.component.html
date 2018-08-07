@@ -1,0 +1,29 @@
+<div class="flexcontainer" fxLayout.xs="column" fxLayoutGap="1%" style="top: 20px">
+  <div class="card" *ngFor="let data of Disp_data">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title style="font-weight: bold; font-size: 16px">{{data.name}}</mat-card-title>
+        <mat-card-subtitle style="font-size: 11px">{{data.type}}</mat-card-subtitle>
+      </mat-card-header>
+      <img routerLink="/restclick/{{data.eng_name}}" class="resizeImg" mat-card-image [src]="data.url" alt="??">
+      <mat-card-content>
+        <p>
+          최소 주문 금액: {{ data.min_mon }}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <div *ngIf="!httpService.loggedin()">
+          <button mat-button (click)="clickLike();">
+            <mat-icon>thumb_up</mat-icon>
+              {{ data.likes }}
+          </button>
+          <button mat-button (click)="clickDislike();">
+            <mat-icon>thumb_down</mat-icon>
+              {{ data.unlikes }}
+          </button>
+        </div>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+
