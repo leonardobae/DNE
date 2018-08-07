@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "kjBulletin": {
+    "DNE": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/kjBulletin",
+            "outputPath": "dist/DNE",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -50,18 +50,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "kjBulletin:build"
+            "browserTarget": "DNE:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "kjBulletin:build:production"
+              "browserTarget": "DNE:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "kjBulletin:build"
+            "browserTarget": "DNE:build"
           }
         },
         "test": {
@@ -95,7 +95,7 @@
         }
       }
     },
-    "kjBulletin-e2e": {
+    "DNE-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -103,11 +103,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "kjBulletin:serve"
+            "devServerTarget": "DNE:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "kjBulletin:serve:production"
+              "devServerTarget": "DNE:serve:production"
             }
           }
         },
@@ -123,5 +123,5 @@
       }
     }
   },
-  "defaultProject": "kjBulletin"
+  "defaultProject": "DNE"
 }
